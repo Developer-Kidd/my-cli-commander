@@ -1,0 +1,9 @@
+# create-elong-cli
+根据不同的技术类型,可以根据不同模版快速创建一个新项目.
+
+## 全局安装
+npm i -g create-elong-cli
+使用 create-elong-cli
+
+## 直接使用,无需安装
+npx create-elong-cli
