@@ -16,12 +16,15 @@ program
 program.parse()
 
 // 下载方法
-const { rmdirSync } = require('fs');
+const { rmdirSync, mkdirSync, existsSync } = require('fs');
 const downloadGitRepo = require('download-git-repo');
 
 function download(url, projectName = 'template') {
     const path = `${process.cwd()}/${projectName}`;
-    console.log(path);
+    // 如果路径不存在则先创建
+    if(!existsSync(path)) {
+        mkdirSync(path);
+    }
     return new Promise((resolve, reject) => {
         rmdirSync( path, { recursive: true, force: true })
         downloadGitRepo(`direct:${url}`, path, { clone: true }, err => {
@@ -65,7 +68,7 @@ inquirer.prompt([
         },
     ]).then((answer) => {
         const { value } = answer;
-        if (!config.pathMap[value]) {
+        if (!pathMap[value]) {
             console.warn('暂时不支持当前技术栈,敬请期待!');
             return;
         }

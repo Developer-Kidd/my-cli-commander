@@ -1,6 +1,6 @@
 {
   "name": "create-elong-cli",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^9.2.0",
+    "create-elong-cli": "^1.0.5",
     "download-git-repo": "^3.0.2",
     "inquirer": "^8.0.0",
     "ora": "^5.4.1"
